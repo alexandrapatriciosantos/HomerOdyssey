@@ -10,20 +10,8 @@ class SignUp extends React.Component {
   }
 
   
-  updateEmailField = (e) => {
-    this.setState( {email : e.target.value})
-  }
-  updateNameField = (e) => {
-    this.setState( {name : e.target.value})
-  }
-  updateLastNameField = (e) => {
-    this.setState( {lastName : e.target.value})
-  }
-  updatePassword = (e) => {
-    this.setState( {password : e.target.value})
-  }
-  updatePasswordConf = (e) => {
-    this.setState( {passwordConf : e.target.value})
+  updateField = (e) => {
+    this.setState( { [e.target.name] : e.target.value})
   }
 
   formSubmit = (e) => {
@@ -38,23 +26,23 @@ class SignUp extends React.Component {
       <form onSubmit={this.formSubmit}>
         <label>
           Email:
-          <input type="email" name="email" onChange={this.updateEmailField}/>
+          <input type="email" name="email" onChange={this.updateField}/>
         </label>
         <label>
           First name:
-          <input type="text" name="Name" onChange={this.updateNameField}/>
+          <input type="text" name="Name" onChange={this.updateField}/>
         </label>
         <label>
           Last name:
-          <input type="text" name="Last name" onChange={this.updateLastNameField}/>
+          <input type="text" name="Last name" onChange={this.updateField}/>
         </label>
         <label>
           Password:
-          <input type="password" name="Password" onChange={this.updatePassword}/>
+          <input type="password" name="Password" onChange={this.updateField}/>
         </label>
         <label>
           Confirm your password:
-          <input type="password" name="PasswordConf" onChange={this.updatePasswordConf}/>
+          <input type="password" name="PasswordConf" onChange={this.updateField}/>
         </label>
         <input type="submit" value="Submit"/>
       </form>
@@ -64,5 +52,3 @@ class SignUp extends React.Component {
 }
 
 export default SignUp
-
-//email, a password, a passwordconf(verification), a name, and a lastname.
