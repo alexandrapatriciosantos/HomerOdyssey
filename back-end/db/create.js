@@ -1,7 +1,7 @@
 const connection = require('./config');
 
 connection.query(
-    `
+  `
     CREATE TABLE IF NOT EXISTS users
 (
     id INTEGER AUTO_INCREMENT,
@@ -10,14 +10,14 @@ connection.query(
     name VARCHAR(90),
     lastname VARCHAR(90),
     PRIMARY KEY (id)
-)`, 
-(err) => {
+)`,
+  (err) => {
     if (err) {
       console.log(err);
       connection.end();
     } else {
-      console.log('users created')
+      console.log('users created');
       connection.end();
     }
-    });
-
+  },
+);

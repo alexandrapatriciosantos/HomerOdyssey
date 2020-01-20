@@ -1,9 +1,11 @@
 const mysql = require('mysql');
+const keys = require('./keys');
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: 'dinamarca17',
-  database: 'wild_db_quest',
+  user: keys.user,
+  password: keys.password,
+  database: keys.database,
 });
+
 module.exports = connection;

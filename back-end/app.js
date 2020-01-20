@@ -4,11 +4,14 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const cors = require('cors');
+
 
 const app = express();
 const authRouter = require('./routes/auth/auth');
 
 // set up the application
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -28,6 +31,6 @@ app.use((req, res, next) => {
 });
 
 // launch the node server
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
   console.log(`Listening on port ${server.address().port}`);
 });
